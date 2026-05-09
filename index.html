@@ -8,6 +8,54 @@
 </head>
 <body>
 
+<!-- INTRO OVERLAY -->
+
+<div class="intro-overlay" id="introOverlay">
+
+    <div class="intro-box">
+
+        <p class="intro-mini">
+            GIFTED COMPUTER GEN 9
+        </p>
+
+        <h1>
+            Welcome To The Chaos
+        </h1>
+
+        <p class="intro-text">
+
+            เว็บไซต์นี้ถูกสร้างขึ้นเพื่อรวบรวม
+            atmosphere ของ Gifted Com Gen 9
+
+            <br><br>
+
+            เมื่อเข้ามา คุณจะเห็น cinematic intro video
+            และเมื่อเลื่อนลง Navbar จะปรากฏขึ้น
+            เพื่อเข้าสู่ส่วนต่างๆของเว็บไซต์
+
+            <br><br>
+
+            Room = สมาชิกในห้อง<br>
+            Schedule = ตารางกิจกรรม<br>
+            Position = ตำแหน่งต่างๆภายในห้อง
+
+            <br><br>
+
+            ด้านล่างยังมี Brain Rot Timeline
+            รวม meme culture และความเบียวของเด็กคอมยุคนี้
+
+        </p>
+
+        <div class="intro-bottom">
+            <span id="introStatus">
+                Please wait 3 seconds...
+            </span>
+        </div>
+
+    </div>
+
+</div>
+
 <!-- NAVBAR -->
 <div class="navbar">
     <!-- LOGO -->
@@ -196,6 +244,41 @@ window.addEventListener("scroll", () => {
     else{
 
         navbar.classList.remove("show");
+
+    }
+
+});
+
+/* =========================
+   INTRO OVERLAY
+========================= */
+
+const introOverlay =
+document.getElementById("introOverlay");
+
+const introStatus =
+document.getElementById("introStatus");
+
+let introReady = false;
+
+/* รอ 3 วิ */
+
+setTimeout(() => {
+
+    introReady = true;
+
+    introStatus.innerHTML =
+    "Click anywhere to continue";
+
+}, 3000);
+
+/* กดตรงไหนก็ปิด */
+
+introOverlay.addEventListener("click", () => {
+
+    if(introReady){
+
+        introOverlay.classList.add("hide");
 
     }
 
