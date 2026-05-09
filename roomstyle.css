@@ -17,6 +17,127 @@ body::before{
 }
 
 /* =========================
+   BACKGROUND FX
+========================= */
+
+body::after{
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+
+    /* grid */
+    linear-gradient(
+        rgba(0,255,200,0.05) 1px,
+        transparent 1px
+    ),
+
+    linear-gradient(
+        90deg,
+        rgba(0,255,200,0.05) 1px,
+        transparent 1px
+    );
+
+    background-size:60px 60px;
+
+    mask-image:
+    radial-gradient(circle at center,
+    black 35%,
+    transparent 90%);
+
+    pointer-events:none;
+
+    z-index:-2;
+
+    animation:gridMove 18s linear infinite;
+}
+
+/* glow orb */
+
+.bg-orb{
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    opacity:.18;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    animation:floatOrb 12s ease-in-out infinite alternate;
+}
+
+.bg-orb.one{
+
+    width:320px;
+    height:320px;
+
+    background:#00ffd0;
+
+    top:-100px;
+    left:-80px;
+}
+
+.bg-orb.two{
+
+    width:280px;
+    height:280px;
+
+    background:#0088ff;
+
+    bottom:-80px;
+    right:-60px;
+
+    animation-delay:4s;
+}
+
+.bg-orb.three{
+
+    width:220px;
+    height:220px;
+
+    background:#7a00ff;
+
+    top:40%;
+    left:55%;
+
+    animation-delay:2s;
+}
+
+@keyframes floatOrb{
+
+    from{
+        transform:
+        translateY(0px)
+        translateX(0px)
+        scale(1);
+    }
+
+    to{
+        transform:
+        translateY(-40px)
+        translateX(30px)
+        scale(1.12);
+    }
+}
+
+@keyframes gridMove{
+
+    from{
+        transform:translateY(0px);
+    }
+
+    to{
+        transform:translateY(60px);
+    }
+}
+
+/* =========================
    LOGO
 ========================= */
 
