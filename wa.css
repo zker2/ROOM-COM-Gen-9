@@ -1,0 +1,244 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    font-family:sans-serif;
+
+    background:
+    radial-gradient(circle at top,#032822 0%,#050505 55%),
+    linear-gradient(180deg,#0b0b0b,#050505);
+
+    color:white;
+
+    position:relative;
+}
+
+/* =========================
+   BG GLOW
+========================= */
+
+.bg-glow{
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at 20% 30%,
+        rgba(0,255,200,0.08),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 80% 20%,
+        rgba(0,191,255,0.06),
+        transparent 25%
+    );
+
+    animation:bgMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes bgMove{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.1) translateY(-15px);
+    }
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.wait-container{
+    position:relative;
+    z-index:2;
+
+    width:min(92%,500px);
+
+    padding:45px 35px;
+
+    text-align:center;
+
+    border-radius:28px;
+
+    background:
+    rgba(255,255,255,0.05);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+    0 0 40px rgba(0,255,200,0.12);
+
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(30px)
+        scale(0.96);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0)
+        scale(1);
+    }
+}
+
+/* =========================
+   LOADER
+========================= */
+
+.loader{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+
+    margin-bottom:28px;
+}
+
+.loader span{
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:#00ffd0;
+
+    box-shadow:
+    0 0 18px rgba(0,255,200,0.6);
+
+    animation:bounce 1s infinite;
+}
+
+.loader span:nth-child(2){
+    animation-delay:0.2s;
+}
+
+.loader span:nth-child(3){
+    animation-delay:0.4s;
+}
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0);
+        opacity:0.5;
+    }
+
+    50%{
+        transform:translateY(-14px);
+        opacity:1;
+    }
+}
+
+/* =========================
+   TEXT
+========================= */
+
+h1{
+    font-size:2rem;
+
+    margin-bottom:14px;
+
+    letter-spacing:1px;
+}
+
+p{
+    color:#cfcfcf;
+
+    line-height:1.7;
+
+    font-size:1rem;
+}
+
+/* =========================
+   LINE
+========================= */
+
+.line{
+    width:100px;
+    height:4px;
+
+    margin:
+    28px auto 16px;
+
+    border-radius:999px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #00ffd0,
+        transparent
+    );
+
+    animation:lineMove 2s linear infinite;
+}
+
+@keyframes lineMove{
+
+    from{
+        transform:scaleX(0.6);
+        opacity:0.5;
+    }
+
+    to{
+        transform:scaleX(1.1);
+        opacity:1;
+    }
+}
+
+small{
+    color:#7d7d7d;
+
+    letter-spacing:4px;
+
+    font-size:0.72rem;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .wait-container{
+        padding:38px 22px;
+        border-radius:22px;
+    }
+
+    h1{
+        font-size:1.5rem;
+    }
+
+    p{
+        font-size:0.92rem;
+    }
+
+    .loader span{
+        width:15px;
+        height:15px;
+    }
+
+}

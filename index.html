@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Gifted Com Gen-9</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <!-- LOGO -->
+    <div class="logo" id="logoBtn">
+        <img src="logo.png" alt="logo">
+    </div>
+
+    <a href="room.html">Room</a>
+    <a href="wait.html">Schedule</a>
+    <a href="posi.html">Position</a>
+    <a href="wait.html">FAQ</a>
+    <a href="wait.html">Support</a>
+</div>
+
+<!-- LOGO POPUP -->
+<div class="logo-overlay" id="logoOverlay">
+    <img src="logo.png" class="logo-popup-img">
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="gpu-card">
+        <iframe
+        src="https://www.youtube.com/embed/842F1-f-yN8?autoplay=1&mute=1&loop=1&playlist=842F1-f-yN8&controls=0&showinfo=0"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen>
+        </iframe>
+    </div>
+</section>
+
+<section class="timeline">
+
+<article class="timeline-item">
+    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="">
+    <div class="content">
+        <h3>2016 - MLG Era</h3>
+        <p>
+            จุดเริ่มต้นของสมองโดนละลายจากคลิป MLG, airhorn,
+            360 no scope และ meme ที่ตัดต่อจนไม่มีใครเข้าใจอะไรอีกต่อไป
+        </p>
+    </div>
+</article>
+
+<article class="timeline-item">
+    <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935" alt="">
+    <div class="content">
+        <h3>2019 - Discord Civilization</h3>
+        <p>
+            เด็กคอมเริ่มใช้ Discord ทั้งวัน เรียนไม่ฟัง
+            แต่ตอบ “อยู่ vc” ได้ภายใน 0.2 วินาที
+        </p>
+    </div>
+</article>
+
+<article class="timeline-item">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="">
+    <div class="content">
+        <h3>2022 - Sigma Grindset</h3>
+        <p>
+            ทุกคนเปิดเพลง phonk ใส่หูฟัง RGB
+            พิมพ์โค้ดตอนตี 2 พร้อมพูดว่า
+            “sleep is temporary, coding is forever”
+        </p>
+    </div>
+</article>
+
+<article class="timeline-item">
+    <img src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28" alt="">
+    <div class="content">
+        <h3>2024 - TikTok Brain Rot</h3>
+        <p>
+            skibidi toilet, ohio, fanum tax,
+            sigma boy และศัพท์ที่ไม่มีใครอธิบายได้
+            กลายเป็นภาษาหลักของอินเทอร์เน็ต
+        </p>
+    </div>
+</article>
+
+<article class="timeline-item">
+    <img src="https://images.unsplash.com/photo-1484417894907-623942c8ee29" alt="">
+    <div class="content">
+        <h3>2026 - Gifted Com Gen9</h3>
+        <p>
+            ห้องที่รวม coder, gamer,
+            คนนอนดึก และผู้รอดชีวิตจากงานกลุ่ม
+            พร้อมพลังสมองเบลอระดับสูงสุด
+        </p>
+    </div>
+</article>
+
+</section>
+
+<footer class="footer">
+<div class="footer-container">
+    
+    <div class="footer-left">
+        <h3>GIFTED</h3>
+        <p>C o m p u t  e r.</p>
+    </div>
+
+    <div class="footer-center">
+        <a href="index.html">Home</a>
+        <a href="wait.html">info</a>
+        <a href="wait.html">Contact</a>
+    </div>
+
+    <div class="footer-right">
+        <p>© Gen 9 Computer</p>
+    </div>
+</div>
+</footer>
+
+<script>
+
+/* =========================
+   HERO VIDEO FADE
+========================= */
+
+const video =
+document.querySelector('.gpu-card iframe');
+
+window.addEventListener('scroll', () => {
+
+    let scrollY = window.scrollY;
+
+    let fadeStart = 0;
+    let fadeEnd = 1000;
+
+    let opacity =
+    1 - (scrollY - fadeStart) / (fadeEnd - fadeStart);
+
+    if(opacity < 0) opacity = 0;
+    if(opacity > 1) opacity = 1;
+
+    video.style.opacity = opacity;
+
+});
+
+/* =========================
+   LOGO POPUP
+========================= */
+
+const logoBtn =
+document.getElementById("logoBtn");
+
+const logoOverlay =
+document.getElementById("logoOverlay");
+
+logoBtn.addEventListener("click", () => {
+
+    logoOverlay.classList.add("active");
+
+});
+
+logoOverlay.addEventListener("click", () => {
+
+    logoOverlay.classList.remove("active");
+
+});
+
+/* =========================
+   NAVBAR SHOW AFTER HERO
+========================= */
+
+const navbar =
+document.querySelector(".navbar");
+
+const hero =
+document.querySelector(".hero");
+
+window.addEventListener("scroll", () => {
+
+    let heroHeight = hero.offsetHeight;
+
+    /* ถ้าเลื่อนผ่าน HERO */
+
+    if(window.scrollY > heroHeight - 100){
+
+        navbar.classList.add("show");
+
+    }
+
+    /* ถ้ายังอยู่ใน HERO */
+
+    else{
+
+        navbar.classList.remove("show");
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
