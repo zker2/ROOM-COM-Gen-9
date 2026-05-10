@@ -329,10 +329,13 @@ html, body {
     radial-gradient(circle at top, rgba(0,255,200,0.05), transparent 70%);
 
     display: flex;
+
+    flex-direction: column; /* เพิ่มอันนี้ */
+
     justify-content: center;
     align-items: center;
 
-    padding: 40px 15px 120px; /* 🔥 เพิ่มด้านล่าง */
+    padding: 40px 15px 120px;
 
     position: relative;
 
