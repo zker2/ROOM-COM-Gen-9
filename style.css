@@ -9,6 +9,11 @@ html{
     min-height:100%;
 }
 
+html,
+body{
+    background:#050505;
+}
+
 /* Chrome, Edge, Safari */
 body::-webkit-scrollbar {
     display: none;
@@ -912,15 +917,4 @@ body::before{
 .content p {
     font-size: 13px;
 }
-}
-
-body::after{
-    content:"";
-
-    position:fixed;
-    inset:0;
-
-    background:#050505;
-
-    z-index:-999;
 }
