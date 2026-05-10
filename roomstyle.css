@@ -7,6 +7,14 @@ body{
     radial-gradient(circle at top, #032822 0%, #050505 45%),
     linear-gradient(180deg, #0a0a0a, #050505);
     color: white;
+
+    font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Poppins",
+    "Inter",
+    sans-serif;
 }
 
 body::before{
@@ -499,12 +507,6 @@ html, body {
     margin-top: 50px;
 
     border-top: 1px solid rgba(255,255,255,0.05);
-
-    font-family:
-    "SF Pro Display",
-    "Poppins",
-    "Inter",
-    sans-serif;
 
     letter-spacing: 0.5px;
 }

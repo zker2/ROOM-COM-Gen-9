@@ -1,0 +1,992 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at top,#032822 0%,#050505 45%),
+    linear-gradient(180deg,#0a0a0a,#050505);
+
+    color:white;
+
+    overflow-x:hidden;
+
+    position:relative;
+
+    font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Poppins",
+    "Inter",
+    sans-serif;
+}
+
+/* =========================
+   BACKGROUND FX
+========================= */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        rgba(0,255,200,0.05) 1px,
+        transparent 1px
+    ),
+
+    linear-gradient(
+        90deg,
+        rgba(0,255,200,0.05) 1px,
+        transparent 1px
+    );
+
+    background-size:60px 60px;
+
+    mask-image:
+    radial-gradient(circle at center,
+    black 35%,
+    transparent 90%);
+
+    pointer-events:none;
+
+    z-index:-2;
+
+    animation:gridMove 18s linear infinite;
+}
+
+.bg-orb{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    opacity:.18;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    animation:floatOrb 12s ease-in-out infinite alternate;
+}
+
+.bg-orb.one{
+
+    width:320px;
+    height:320px;
+
+    background:#00ffd0;
+
+    top:-100px;
+    left:-80px;
+}
+
+.bg-orb.two{
+
+    width:280px;
+    height:280px;
+
+    background:#0088ff;
+
+    bottom:-80px;
+    right:-60px;
+
+    animation-delay:4s;
+}
+
+.bg-orb.three{
+
+    width:220px;
+    height:220px;
+
+    background:#7a00ff;
+
+    top:40%;
+    left:55%;
+
+    animation-delay:2s;
+}
+
+@keyframes floatOrb{
+
+    from{
+        transform:
+        translateY(0px)
+        translateX(0px)
+        scale(1);
+    }
+
+    to{
+        transform:
+        translateY(-40px)
+        translateX(30px)
+        scale(1.12);
+    }
+}
+
+@keyframes gridMove{
+
+    from{
+        transform:translateY(0px);
+    }
+
+    to{
+        transform:translateY(60px);
+    }
+}
+
+/* HERO */
+
+.hero{
+
+    min-height:55vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 20px 40px;
+}
+
+.mini{
+
+    letter-spacing:4px;
+
+    color:#00ffd0;
+
+    margin-bottom:15px;
+
+    font-size:.85rem;
+}
+
+.hero h1{
+
+    font-size:4rem;
+
+    margin-bottom:20px;
+
+    text-shadow:
+    0 0 25px rgba(0,255,200,.25);
+}
+
+.desc{
+
+    max-width:700px;
+
+    color:#cfcfcf;
+
+    line-height:1.8;
+
+    font-size:1rem;
+}
+
+/* =========================
+   INSTAGRAM CARD
+========================= */
+
+.contact-container{
+
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px 20px 120px;
+}
+
+.ig-card{
+
+    width:100%;
+    max-width:760px;
+
+    display:flex;
+    align-items:center;
+
+    gap:28px;
+
+    padding:38px;
+
+    text-decoration:none;
+
+    border-radius:30px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,0.08),
+        rgba(255,255,255,0.03)
+    );
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+    0 0 40px rgba(0,255,200,0.08);
+
+    transition:.4s ease;
+}
+
+/* glow */
+
+.ig-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00ffd0,
+        #0088ff,
+        #7a00ff
+    );
+
+    opacity:.15;
+
+    filter:blur(35px);
+
+    z-index:-1;
+
+    transition:.4s ease;
+}
+
+.ig-card:hover{
+
+    transform:
+    translateY(-6px)
+    scale(1.01);
+
+    border-color:
+    rgba(0,255,200,0.35);
+
+    box-shadow:
+    0 0 60px rgba(0,255,200,0.15);
+}
+
+.ig-card:hover::before{
+
+    opacity:.28;
+}
+
+/* icon */
+
+.ig-icon{
+
+    min-width:110px;
+    height:110px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:28px;
+
+    font-size:3rem;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #833ab4,
+        #fd1d1d,
+        #fcb045
+    );
+
+    box-shadow:
+    0 0 30px rgba(255,0,180,.28);
+}
+
+/* text */
+
+.ig-info h2{
+
+    font-size:2rem;
+
+    margin-bottom:10px;
+
+    color:white;
+}
+
+.ig-info p{
+
+    font-size:1.15rem;
+
+    color:#00ffd0;
+
+    margin-bottom:12px;
+}
+
+.ig-info span{
+
+    color:#9f9f9f;
+
+    font-size:.95rem;
+
+    letter-spacing:1px;
+}
+
+/* ===== FOOTER ===== */
+
+.footer{
+
+    width:100%;
+
+    margin-top:80px;
+
+    background:
+    rgba(10,10,10,0.85);
+
+    border-top:
+    1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(14px);
+}
+
+.footer-container{
+
+    width:100%;
+
+    padding:
+    38px
+    45px;
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+}
+
+.footer-left h3{
+
+    color:white;
+
+    font-size:1.4rem;
+
+    margin-bottom:6px;
+
+    letter-spacing:3px;
+}
+
+.footer-left p{
+
+    color:#8e8e8e;
+}
+
+.footer-center{
+
+    display:flex;
+    gap:18px;
+}
+
+.footer-center a{
+
+    text-decoration:none;
+
+    color:#9f9f9f;
+
+    transition:0.3s ease;
+
+    position:relative;
+}
+
+.footer-center a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-5px;
+
+    width:0%;
+    height:2px;
+
+    background:#00ffd0;
+
+    transition:0.3s ease;
+}
+
+.footer-center a:hover::after{
+
+    width:100%;
+}
+
+.footer-right{
+
+    color:#777;
+}
+
+/* =========================
+   INTRO ANIMATION
+========================= */
+
+.intro{
+
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,#032822 0%,#050505 45%),
+    linear-gradient(180deg,#0a0a0a,#050505);
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+
+    animation:introFade 1s ease forwards;
+
+    animation-delay:2.2s;
+}
+
+/* โลโก้ */
+
+.intro-logo{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    letter-spacing:10px;
+
+    color:white;
+
+    opacity:0;
+
+    transform:
+    translateY(30px)
+    scale(.9);
+
+    text-shadow:
+    0 0 30px rgba(0,255,200,.25);
+
+    animation:
+    logoReveal 1.2s ease forwards;
+}
+
+/* เส้นโหลด */
+
+.intro-line{
+
+    width:0px;
+    height:2px;
+
+    margin-top:30px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #00ffd0,
+        #0088ff
+    );
+
+    border-radius:999px;
+
+    box-shadow:
+    0 0 18px rgba(0,255,200,.45);
+
+    animation:
+    lineGrow 1.4s ease forwards;
+
+    animation-delay:.5s;
+}
+
+/* LOGO IN */
+
+@keyframes logoReveal{
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+    }
+}
+
+/* LINE */
+
+@keyframes lineGrow{
+
+    to{
+        width:220px;
+    }
+}
+
+/* FADE OUT */
+
+@keyframes introFade{
+
+    to{
+
+        opacity:0;
+        visibility:hidden;
+
+        pointer-events:none;
+    }
+}
+
+/* ========================================
+   LAPTOP / SMALL DESKTOP
+======================================== */
+
+@media(max-width:1200px){
+
+    .hero h1{
+        font-size:3.5rem;
+    }
+
+    .contact-card{
+        max-width:650px;
+    }
+
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media(max-width:768px){
+
+    body::after{
+
+        background-size:40px 40px;
+    }
+
+    .bg-orb.one{
+
+        width:240px;
+        height:240px;
+    }
+
+    .bg-orb.two{
+
+        width:220px;
+        height:220px;
+    }
+
+    .bg-orb.three{
+
+        width:180px;
+        height:180px;
+    }
+
+    /* HERO */
+
+    .hero{
+
+        min-height:50vh;
+
+        padding:
+        110px
+        25px
+        30px;
+    }
+
+    .mini{
+
+        font-size:.75rem;
+
+        letter-spacing:3px;
+    }
+
+    .hero h1{
+
+        font-size:2.8rem;
+
+        line-height:1.1;
+    }
+
+    .desc{
+
+        font-size:.95rem;
+
+        line-height:1.7;
+    }
+
+    /* CONTACT */
+
+    .contact-container{
+
+        padding:
+        10px
+        18px
+        70px;
+    }
+
+    .contact-card{
+
+        padding:28px;
+
+        border-radius:24px;
+    }
+
+    .contact-card h2{
+
+        font-size:1.6rem;
+    }
+
+    .contact-list{
+
+        gap:15px;
+    }
+
+    .contact-list a{
+
+        padding:18px;
+    }
+
+    .contact-list span{
+
+        font-size:1rem;
+    }
+
+    .contact-list p{
+
+        font-size:.92rem;
+    }
+
+    /* FOOTER */
+
+    .footer-container{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:30px 20px;
+    }
+
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media(max-width:480px){
+
+    body::after{
+
+        background-size:28px 28px;
+    }
+
+    .bg-orb{
+
+        filter:blur(80px);
+
+        opacity:.14;
+    }
+
+    .bg-orb.one{
+
+        width:180px;
+        height:180px;
+
+        top:-50px;
+        left:-50px;
+    }
+
+    .bg-orb.two{
+
+        width:160px;
+        height:160px;
+
+        bottom:-40px;
+        right:-40px;
+    }
+
+    .bg-orb.three{
+
+        width:120px;
+        height:120px;
+    }
+
+    /* HERO */
+
+    .hero{
+
+        min-height:45vh;
+
+        padding:
+        95px
+        18px
+        20px;
+    }
+
+    .mini{
+
+        font-size:.68rem;
+
+        letter-spacing:2px;
+
+        margin-bottom:10px;
+    }
+
+    .hero h1{
+
+        font-size:2rem;
+
+        margin-bottom:14px;
+    }
+
+    .desc{
+
+        font-size:.88rem;
+
+        line-height:1.65;
+    }
+
+    /* CONTACT */
+
+    .contact-container{
+
+        padding:
+        0px
+        14px
+        55px;
+    }
+
+    .contact-card{
+
+        padding:20px;
+
+        border-radius:20px;
+    }
+
+    .contact-card h2{
+
+        font-size:1.35rem;
+
+        margin-bottom:20px;
+    }
+
+    .contact-list{
+
+        gap:12px;
+    }
+
+    .contact-list a{
+
+        padding:16px;
+
+        border-radius:15px;
+    }
+
+    .contact-list span{
+
+        font-size:.95rem;
+    }
+
+    .contact-list p{
+
+        font-size:.82rem;
+
+        margin-top:4px;
+    }
+
+    /* FOOTER */
+
+    .footer{
+
+        margin-top:50px;
+    }
+
+    .footer-container{
+
+        padding:25px 16px;
+
+        gap:14px;
+    }
+
+    .footer-left h3{
+
+        font-size:1.1rem;
+    }
+
+    .footer-left p{
+
+        font-size:.85rem;
+    }
+
+    .footer-center{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:14px;
+    }
+
+    .footer-center a{
+
+        font-size:.85rem;
+    }
+
+    .footer-right{
+
+        font-size:.78rem;
+    }
+
+    /* INTRO */
+
+    .intro-logo{
+
+        font-size:1.7rem;
+
+        letter-spacing:5px;
+
+        text-align:center;
+    }
+
+    .intro-line{
+
+        margin-top:20px;
+    }
+
+}
+
+/* ========================================
+   VERY SMALL MOBILE
+======================================== */
+
+@media(max-width:360px){
+
+    .hero h1{
+
+        font-size:1.7rem;
+    }
+
+    .desc{
+
+        font-size:.8rem;
+    }
+
+    .contact-card{
+
+        padding:16px;
+    }
+
+    .contact-list a{
+
+        padding:14px;
+    }
+
+    .footer-center{
+
+        gap:10px;
+    }
+
+    .intro-logo{
+
+        font-size:1.4rem;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .ig-card{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:28px 22px;
+
+        gap:20px;
+    }
+
+    .ig-icon{
+
+        min-width:90px;
+        height:90px;
+
+        font-size:2.4rem;
+
+        border-radius:22px;
+    }
+
+    .ig-info h2{
+
+        font-size:1.6rem;
+    }
+
+    .ig-info p{
+
+        font-size:1rem;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .ig-card{
+
+        padding:22px 18px;
+
+        border-radius:24px;
+    }
+
+    .ig-icon{
+
+        min-width:75px;
+        height:75px;
+
+        font-size:2rem;
+    }
+
+    .ig-info h2{
+
+        font-size:1.3rem;
+    }
+
+    .ig-info p{
+
+        font-size:.92rem;
+    }
+
+    .ig-info span{
+
+        font-size:.8rem;
+    }
+
+}
