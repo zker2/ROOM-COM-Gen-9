@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>infected.exe</title>
+
+    <link rel="stylesheet" href="term.css">
+</head>
+<body>
+
+<!-- VIRUS -->
+<div class="virus-overlay" id="virusOverlay">
+
+    <div class="virus-box">
+
+        <h1>SYSTEM INFECTED</h1>
+
+        <p>
+            skibidi_toilet.exe breached your system
+        </p>
+
+        <div class="loading-bar">
+            <div class="loading-fill"></div>
+        </div>
+
+        <div class="fake-log">
+
+            <p>> deleting homework...</p>
+            <p>> leaking discord messages...</p>
+            <p>> downloading ohio package...</p>
+            <p>> sigma virus installed...</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SOMTAM -->
+<div class="somtam-mode" id="somtamMode">
+
+    <img
+    src="https://media.tenor.com/x8v1oNUOmg4AAAAC/cat-cooking.gif"
+    class="somtam-gif">
+
+    <h1>ส้มตำกำลังล้างไวรัส...</h1>
+
+    <p>
+        ปลาร้าระดับทหารกำลังทำลาย malware
+    </p>
+
+    <div class="destroy-text">
+
+        <span>กำจัด ohio.exe</span>
+        <span>ลบ skibidi.dll</span>
+        <span>ยิง fanum tax service</span>
+        <span>ถอน sigma protocol</span>
+
+    </div>
+
+</div>
+
+<!-- TERMINAL -->
+<div class="terminal" id="terminal">
+
+    <div class="topbar">
+
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+
+        <p>gifted-com://safe-mode</p>
+
+    </div>
+
+    <div class="content">
+
+        <p>> system recovered successfully</p>
+        <p>> malware status : destroyed</p>
+        <p>> somtam firewall : ACTIVE</p>
+
+        <br>
+
+        <p class="quote">
+            > “ไม่มีไวรัสไหนชนะส้มตำปลาร้าได้”
+        </p>
+
+        <a href="index.html" class="btn">
+            ENTER ROOM
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+
+const overlay =
+document.getElementById("virusOverlay");
+
+const somtam =
+document.getElementById("somtamMode");
+
+const terminal =
+document.getElementById("terminal");
+
+/* สั่น */
+
+setInterval(() => {
+
+    document.body.classList.toggle("shake");
+
+}, 120);
+
+/* 4 วิ */
+
+setTimeout(() => {
+
+    overlay.style.display = "none";
+
+    somtam.classList.add("active");
+
+}, 4000);
+
+/* 8 วิ */
+
+setTimeout(() => {
+
+    somtam.style.display = "none";
+
+    document.body.classList.remove("shake");
+
+    terminal.classList.add("show");
+
+}, 8000);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,878 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+    font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+body{
+
+    background:
+    radial-gradient(circle at top,#032822 0%,#050505 45%),
+    #050505;
+
+    color:white;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+    position:relative;
+
+    animation:
+    pageFade 1.2s ease;
+}
+
+@keyframes pageFade{
+
+    from{
+
+        opacity:0;
+
+        filter:
+        blur(10px);
+
+        transform:
+        scale(1.02);
+    }
+
+    to{
+
+        opacity:1;
+
+        filter:
+        blur(0);
+
+        transform:
+        scale(1);
+    }
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.orb{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    opacity:.15;
+
+    z-index:-1;
+}
+
+.one{
+
+    width:300px;
+    height:300px;
+
+    background:#00ffd0;
+
+    top:-100px;
+    left:-80px;
+}
+
+.two{
+
+    width:260px;
+    height:260px;
+
+    background:#0088ff;
+
+    bottom:-80px;
+    right:-50px;
+}
+
+.three{
+
+    width:220px;
+    height:220px;
+
+    background:#7a00ff;
+
+    top:40%;
+    left:50%;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    width:100%;
+
+    min-height:45vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:
+    100px 20px 60px;
+}
+
+.mini{
+
+    letter-spacing:5px;
+
+    color:#00ffd0;
+
+    margin-bottom:18px;
+
+    font-size:.8rem;
+}
+
+.hero h1{
+
+    font-size:5rem;
+
+    margin-bottom:18px;
+
+    text-shadow:
+    0 0 30px rgba(0,255,208,.2);
+}
+
+.desc{
+
+    color:#bdbdbd;
+
+    max-width:650px;
+
+    line-height:1.8;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.archive-grid{
+
+    width:100%;
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:40px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.archive-card{
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.05),
+        rgba(255,255,255,.02)
+    );
+
+    border:
+    1px solid rgba(255,255,255,.06);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(14px);
+
+    transition:.4s ease;
+
+    position:relative;
+}
+
+.archive-card:hover{
+
+    transform:
+    translateY(-10px)
+    scale(1.01);
+
+    border-color:
+    rgba(0,255,208,.35);
+
+    box-shadow:
+    0 0 40px rgba(0,255,208,.08);
+}
+
+.archive-card img{
+
+    width:100%;
+    height:240px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.card-content{
+
+    padding:28px;
+}
+
+.tag{
+
+    color:#00ffd0;
+
+    letter-spacing:3px;
+
+    font-size:.75rem;
+
+    margin-bottom:14px;
+}
+
+.card-content h2{
+
+    font-size:1.7rem;
+
+    margin-bottom:14px;
+}
+
+.text{
+
+    color:#cfcfcf;
+
+    line-height:1.8;
+
+    margin-bottom:22px;
+}
+
+.card-content a{
+
+    display:inline-block;
+
+    padding:
+    12px 20px;
+
+    border:
+    1px solid rgba(0,255,208,.2);
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    color:#00ffd0;
+
+    transition:.3s ease;
+}
+
+.card-content a:hover{
+
+    background:#00ffd0;
+
+    color:black;
+
+    box-shadow:
+    0 0 25px rgba(0,255,208,.25);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+    width:100%;
+
+    margin-top:80px;
+
+    border-top:
+    1px solid rgba(255,255,255,.06);
+
+    background:
+    rgba(255,255,255,.02);
+
+    backdrop-filter:blur(10px);
+}
+
+.footer-container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:35px 25px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.footer-left h3{
+
+    font-size:1.5rem;
+
+    color:#00ffd0;
+}
+
+.footer-left p{
+
+    color:#9f9f9f;
+
+    margin-top:5px;
+}
+
+.footer-center{
+
+    display:flex;
+
+    gap:20px;
+}
+
+.footer-center a{
+
+    color:#cfcfcf;
+
+    text-decoration:none;
+
+    transition:.3s ease;
+}
+
+.footer-center a:hover{
+
+    color:#00ffd0;
+}
+
+.footer-right p{
+
+    color:#7f7f7f;
+}
+
+/* =========================
+   HERO ANIMATION
+========================= */
+
+.hero .mini{
+
+    opacity:0;
+
+    transform:
+    translateY(20px);
+
+    animation:
+    fadeUp 1s ease forwards;
+
+    animation-delay:.2s;
+}
+
+.hero h1{
+
+    opacity:0;
+
+    transform:
+    translateY(40px);
+
+    animation:
+    fadeUp 1.2s ease forwards;
+
+    animation-delay:.4s;
+}
+
+.hero .desc{
+
+    opacity:0;
+
+    transform:
+    translateY(30px);
+
+    animation:
+    fadeUp 1.2s ease forwards;
+
+    animation-delay:.7s;
+}
+
+@keyframes fadeUp{
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+/* =========================
+   CARD ENTRY
+========================= */
+
+.archive-card{
+
+    opacity:0;
+
+    transform:
+    translateY(50px);
+
+    animation:
+    cardReveal 1s ease forwards;
+}
+
+.archive-card:nth-child(1){
+
+    animation-delay:1s;
+}
+
+.archive-card:nth-child(2){
+
+    animation-delay:1.3s;
+}
+
+.archive-card:nth-child(3){
+
+    animation-delay:1.6s;
+}
+
+@keyframes cardReveal{
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+/* =========================
+   FLOATING ORBS
+========================= */
+
+.one{
+
+    animation:
+    float1 9s ease-in-out infinite alternate;
+}
+
+.two{
+
+    animation:
+    float2 11s ease-in-out infinite alternate;
+}
+
+.three{
+
+    animation:
+    float3 13s ease-in-out infinite alternate;
+}
+
+@keyframes float1{
+
+    from{
+
+        transform:
+        translateY(0)
+        translateX(0);
+    }
+
+    to{
+
+        transform:
+        translateY(30px)
+        translateX(20px);
+    }
+}
+
+@keyframes float2{
+
+    from{
+
+        transform:
+        translateY(0)
+        translateX(0);
+    }
+
+    to{
+
+        transform:
+        translateY(-30px)
+        translateX(-20px);
+    }
+}
+
+@keyframes float3{
+
+    from{
+
+        transform:
+        translateY(0)
+        scale(1);
+    }
+
+    to{
+
+        transform:
+        translateY(20px)
+        scale(1.08);
+    }
+}
+
+/* =========================
+   FOOTER FADE
+========================= */
+
+.footer{
+
+    opacity:0;
+
+    animation:
+    fadeFooter 1s ease forwards;
+
+    animation-delay:1.8s;
+}
+
+@keyframes fadeFooter{
+
+    to{
+
+        opacity:1;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .hero h1{
+
+        font-size:3rem;
+    }
+
+    .archive-grid{
+
+        padding:20px;
+    }
+
+    .footer-container{
+
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .hero{
+
+        padding-top:90px;
+    }
+
+    .hero h1{
+
+        font-size:2.3rem;
+    }
+
+    .card-content h2{
+
+        font-size:1.3rem;
+    }
+
+    .footer-center{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+    }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:1024px){
+
+    .hero{
+
+        min-height:40vh;
+
+        padding:
+        90px 25px 50px;
+    }
+
+    .hero h1{
+
+        font-size:4rem;
+    }
+
+    .desc{
+
+        font-size:.95rem;
+
+        max-width:600px;
+    }
+
+    .archive-grid{
+
+        grid-template-columns:
+        repeat(auto-fit,minmax(280px,1fr));
+
+        padding:30px;
+    }
+
+    .archive-card img{
+
+        height:220px;
+    }
+
+    .card-content{
+
+        padding:24px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    body{
+
+        overflow-x:hidden;
+    }
+
+    .orb{
+
+        filter:blur(80px);
+
+        opacity:.12;
+    }
+
+    .one{
+
+        width:220px;
+        height:220px;
+
+        top:-60px;
+        left:-60px;
+    }
+
+    .two{
+
+        width:200px;
+        height:200px;
+
+        bottom:-50px;
+        right:-50px;
+    }
+
+    .three{
+
+        width:160px;
+        height:160px;
+    }
+
+    .hero{
+
+        min-height:auto;
+
+        padding:
+        100px 20px 40px;
+    }
+
+    .mini{
+
+        font-size:.7rem;
+
+        letter-spacing:3px;
+    }
+
+    .hero h1{
+
+        font-size:3rem;
+
+        line-height:1.1;
+    }
+
+    .desc{
+
+        font-size:.92rem;
+
+        line-height:1.7;
+    }
+
+    .archive-grid{
+
+        padding:20px;
+
+        gap:24px;
+    }
+
+    .archive-card{
+
+        border-radius:22px;
+    }
+
+    .archive-card img{
+
+        height:200px;
+    }
+
+    .card-content{
+
+        padding:22px;
+    }
+
+    .card-content h2{
+
+        font-size:1.45rem;
+    }
+
+    .text{
+
+        font-size:.93rem;
+    }
+
+    .card-content a{
+
+        width:100%;
+
+        text-align:center;
+    }
+
+    .footer{
+
+        margin-top:60px;
+    }
+
+    .footer-container{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:25px;
+    }
+
+    .footer-center{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:16px;
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:500px){
+
+    .hero{
+
+        padding:
+        85px 18px 30px;
+    }
+
+    .hero h1{
+
+        font-size:2.3rem;
+    }
+
+    .desc{
+
+        font-size:.85rem;
+    }
+
+    .archive-grid{
+
+        padding:15px;
+    }
+
+    .archive-card{
+
+        border-radius:20px;
+    }
+
+    .archive-card img{
+
+        height:180px;
+    }
+
+    .card-content{
+
+        padding:18px;
+    }
+
+    .tag{
+
+        font-size:.68rem;
+
+        letter-spacing:2px;
+    }
+
+    .card-content h2{
+
+        font-size:1.2rem;
+    }
+
+    .text{
+
+        font-size:.85rem;
+
+        line-height:1.7;
+    }
+
+    .card-content a{
+
+        padding:
+        11px 16px;
+
+        font-size:.85rem;
+    }
+
+    .footer-container{
+
+        padding:28px 18px;
+    }
+
+    .footer-left h3{
+
+        font-size:1.2rem;
+    }
+
+    .footer-left p,
+    .footer-right p{
+
+        font-size:.82rem;
+    }
+
+    .footer-center a{
+
+        font-size:.9rem;
+    }
+
+}
