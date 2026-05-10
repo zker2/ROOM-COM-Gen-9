@@ -990,3 +990,48 @@ body::after{
     }
 
 }
+
+html{
+    min-height:100%;
+    background:#050505;
+}
+
+body{
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at top,#032822 0%,#050505 45%),
+    linear-gradient(180deg,#0a0a0a,#050505);
+
+    background-color:#050505;
+
+    overflow-x:hidden;
+
+    -webkit-overflow-scrolling:touch;
+}
+
+/* กันพื้นขาวเวลา scroll บนมือถือ */
+body::before{
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:#050505;
+
+    z-index:-999;
+}
+
+/* Safari / Android repaint fix */
+@media(max-width:768px){
+
+    body{
+        background-attachment:scroll;
+        transform:translateZ(0);
+    }
+
+    .bg-orb{
+        will-change:transform;
+    }
+
+}

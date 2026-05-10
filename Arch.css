@@ -876,3 +876,40 @@ body{
     }
 
 }
+
+html{
+    min-height:100%;
+    background:#050505;
+}
+
+body{
+    background:
+    radial-gradient(circle at top,#032822 0%,#050505 45%),
+    #050505;
+
+    background-color:#050505;
+
+    min-height:100vh;
+}
+
+/* กันจอขาวบนมือถือ */
+body::after{
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:#050505;
+
+    z-index:-999;
+}
+
+/* iPhone / Android repaint fix */
+@media (max-width:768px){
+
+    body{
+        background-attachment:scroll;
+        -webkit-overflow-scrolling:touch;
+    }
+
+}

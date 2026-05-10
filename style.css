@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html{
+    background:#050505;
+    min-height:100%;
+}
+
 /* Chrome, Edge, Safari */
 body::-webkit-scrollbar {
     display: none;
@@ -13,6 +18,10 @@ body{
     background:
     radial-gradient(circle at top,#032822 0%,#050505 45%),
     linear-gradient(180deg,#0a0a0a,#050505);
+
+    background-color:#050505;
+
+    min-height:100vh;
 
     color:white;
 
@@ -903,4 +912,15 @@ body::before{
 .content p {
     font-size: 13px;
 }
+}
+
+body::after{
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:#050505;
+
+    z-index:-999;
 }
