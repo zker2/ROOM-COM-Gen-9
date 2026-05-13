@@ -6,8 +6,6 @@
 
 body{
 
-    min-height:100vh;
-
     background:
     radial-gradient(circle at top,#032822 0%,#050505 45%),
     linear-gradient(180deg,#0a0a0a,#050505);
@@ -66,6 +64,8 @@ body::after{
 }
 
 .bg-orb{
+
+    max-width:100vw;
 
     position:fixed;
 
@@ -150,9 +150,6 @@ body::after{
 /* HERO */
 
 .hero{
-
-    min-height:55vh;
-
     display:flex;
     flex-direction:column;
 
@@ -208,7 +205,7 @@ body::after{
     justify-content:center;
     align-items:center;
 
-    padding:20px 20px 120px;
+    padding:20px 20px 60px;
 }
 
 .ig-card{
@@ -358,8 +355,6 @@ body::after{
 
     width:100%;
 
-    margin-top:80px;
-
     background:
     rgba(10,10,10,0.85);
 
@@ -437,6 +432,149 @@ body::after{
     transition:0.3s ease;
 }
 
+/* =========================
+   PAGE FADE
+========================= */
+
+body{
+
+    animation:
+    pageFade 1.2s ease;
+}
+
+@keyframes pageFade{
+
+    from{
+
+        opacity:0;
+
+        filter:
+        blur(10px);
+
+        transform:
+        scale(1.02);
+    }
+
+    to{
+
+        opacity:1;
+
+        filter:
+        blur(0);
+
+        transform:
+        scale(1);
+    }
+}
+
+/* =========================
+   HERO ANIMATION
+========================= */
+
+.hero .mini{
+
+    opacity:0;
+
+    transform:
+    translateY(20px);
+
+    animation:
+    fadeUp 1s ease forwards;
+
+    animation-delay:.2s;
+}
+
+.hero h1{
+
+    opacity:0;
+
+    transform:
+    translateY(40px);
+
+    animation:
+    fadeUp 1.2s ease forwards;
+
+    animation-delay:.4s;
+}
+
+.hero .desc{
+
+    opacity:0;
+
+    transform:
+    translateY(30px);
+
+    animation:
+    fadeUp 1.2s ease forwards;
+
+    animation-delay:.7s;
+}
+
+/* =========================
+   CARD ENTRY
+========================= */
+
+.ig-card{
+
+    opacity:0;
+
+    transform:
+    translateY(50px);
+
+    animation:
+    cardReveal 1s ease forwards;
+
+    animation-delay:1s;
+}
+
+/* =========================
+   FOOTER FADE
+========================= */
+
+.footer{
+
+    opacity:0;
+
+    animation:
+    fadeFooter 1s ease forwards;
+
+    animation-delay:1.4s;
+}
+
+/* =========================
+   KEYFRAMES
+========================= */
+
+@keyframes fadeUp{
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+@keyframes cardReveal{
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+@keyframes fadeFooter{
+
+    to{
+
+        opacity:1;
+    }
+}
+
 .footer-center a:hover::after{
 
     width:100%;
@@ -445,120 +583,6 @@ body::after{
 .footer-right{
 
     color:#777;
-}
-
-/* =========================
-   INTRO ANIMATION
-========================= */
-
-.intro{
-
-    position:fixed;
-    inset:0;
-
-    background:
-    radial-gradient(circle at top,#032822 0%,#050505 45%),
-    linear-gradient(180deg,#0a0a0a,#050505);
-
-    display:flex;
-    flex-direction:column;
-
-    justify-content:center;
-    align-items:center;
-
-    z-index:99999;
-
-    animation:introFade 1s ease forwards;
-
-    animation-delay:2.2s;
-}
-
-/* โลโก้ */
-
-.intro-logo{
-
-    font-size:3rem;
-
-    font-weight:700;
-
-    letter-spacing:10px;
-
-    color:white;
-
-    opacity:0;
-
-    transform:
-    translateY(30px)
-    scale(.9);
-
-    text-shadow:
-    0 0 30px rgba(0,255,200,.25);
-
-    animation:
-    logoReveal 1.2s ease forwards;
-}
-
-/* เส้นโหลด */
-
-.intro-line{
-
-    width:0px;
-    height:2px;
-
-    margin-top:30px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #00ffd0,
-        #0088ff
-    );
-
-    border-radius:999px;
-
-    box-shadow:
-    0 0 18px rgba(0,255,200,.45);
-
-    animation:
-    lineGrow 1.4s ease forwards;
-
-    animation-delay:.5s;
-}
-
-/* LOGO IN */
-
-@keyframes logoReveal{
-
-    to{
-
-        opacity:1;
-
-        transform:
-        translateY(0)
-        scale(1);
-    }
-}
-
-/* LINE */
-
-@keyframes lineGrow{
-
-    to{
-        width:220px;
-    }
-}
-
-/* FADE OUT */
-
-@keyframes introFade{
-
-    to{
-
-        opacity:0;
-        visibility:hidden;
-
-        pointer-events:none;
-    }
 }
 
 /* ========================================
@@ -700,6 +724,11 @@ body::after{
 
 @media(max-width:480px){
 
+    body{
+
+        min-height:100dvh;
+    }
+
     body::after{
 
         background-size:28px 28px;
@@ -740,7 +769,7 @@ body::after{
 
     .hero{
 
-        min-height:45vh;
+        min-height:auto;
 
         padding:
         95px
@@ -820,11 +849,6 @@ body::after{
     }
 
     /* FOOTER */
-
-    .footer{
-
-        margin-top:50px;
-    }
 
     .footer-container{
 
@@ -997,7 +1021,11 @@ html{
 }
 
 body{
+
     min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
 
     background:
     radial-gradient(circle at top,#032822 0%,#050505 45%),
@@ -1032,6 +1060,40 @@ body::before{
 
     .bg-orb{
         will-change:transform;
+    }
+
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+    min-height:100dvh;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+}
+
+/* เนื้อหาหลัก */
+main{
+    flex:1;
+}
+
+/* มือถือ */
+@media(max-width:480px){
+
+    .hero{
+        padding:90px 18px 25px;
+    }
+
+    .contact-container{
+        padding:10px 14px 30px;
+    }
+
+    .footer{
+        margin-top:0;
     }
 
 }

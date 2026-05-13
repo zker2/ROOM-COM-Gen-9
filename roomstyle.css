@@ -2,6 +2,14 @@
     box-sizing: border-box;
 }
 
+
+
+html,
+body{
+    margin:0;
+    padding:0;
+}
+
 body{
     background:
     radial-gradient(circle at top, #032822 0%, #050505 45%),
@@ -22,6 +30,191 @@ body::before{
     radial-gradient(circle at 20% 20%, rgba(0,255,200,0.10), transparent 30%),
     radial-gradient(circle at 80% 10%, rgba(0,191,255,0.08), transparent 25%),
     radial-gradient(circle at 50% 80%, rgba(0,255,170,0.06), transparent 30%);
+}
+
+/* =========================
+   INTRO SCREEN
+========================= */
+
+.intro{
+
+    position: fixed;
+    inset: 0;
+
+    background:
+    radial-gradient(circle at top,
+    #032822 0%,
+    #000 70%);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+
+    overflow:hidden;
+
+    transition:
+    opacity 1s ease,
+    visibility 1s ease;
+}
+
+/* ซ่อน intro */
+.intro.hide{
+
+    opacity:0;
+    visibility:hidden;
+}
+
+/* CONTENT */
+.intro-content{
+
+    text-align:center;
+
+    animation:introZoom 2s ease;
+}
+
+.intro-logo{
+
+    width:120px;
+    height:120px;
+
+    object-fit:cover;
+
+    border-radius:30px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+    0 0 30px rgba(0,255,200,.35),
+    0 0 70px rgba(0,170,255,.18);
+
+    animation:
+    pulseGlow 2s infinite alternate;
+}
+
+.intro-content h1{
+
+    font-size:3rem;
+
+    letter-spacing:6px;
+
+    margin-bottom:10px;
+
+    color:white;
+
+    text-shadow:
+    0 0 20px rgba(0,255,200,.25);
+}
+
+.intro-content p{
+
+    color:rgba(255,255,255,.6);
+
+    letter-spacing:8px;
+
+    margin-bottom:35px;
+}
+
+/* loading bar */
+
+.intro-bar{
+
+    width:240px;
+    height:5px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    margin:auto;
+}
+
+.intro-bar-fill{
+
+    width:0%;
+
+    height:100%;
+
+    background:
+    linear-gradient(90deg,
+    #00ffd0,
+    #00aaff);
+
+    border-radius:999px;
+
+    animation:loadingBar 2.8s ease forwards;
+}
+
+/* ANIMATIONS */
+
+@keyframes loadingBar{
+
+    from{
+        width:0%;
+    }
+
+    to{
+        width:100%;
+    }
+}
+
+@keyframes introZoom{
+
+    from{
+        opacity:0;
+        transform:
+        scale(.8)
+        translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        scale(1)
+        translateY(0);
+    }
+}
+
+@keyframes pulseGlow{
+
+    from{
+        box-shadow:
+        0 0 20px rgba(0,255,200,.25),
+        0 0 40px rgba(0,170,255,.10);
+    }
+
+    to{
+        box-shadow:
+        0 0 35px rgba(0,255,200,.45),
+        0 0 90px rgba(0,170,255,.25);
+    }
+}
+
+/* MOBILE */
+@media(max-width:480px){
+
+    .intro-logo{
+        width:90px;
+        height:90px;
+    }
+
+    .intro-content h1{
+        font-size:1.7rem;
+        letter-spacing:4px;
+    }
+
+    .intro-content p{
+        font-size:.8rem;
+        letter-spacing:5px;
+    }
+
+    .intro-bar{
+        width:180px;
+    }
+
 }
 
 /* =========================
@@ -292,13 +485,13 @@ html, body {
 
 /* HERO */
 .hero {
-    height: 100vh;
+    height: 100svh;
     display: flex;
     justify-content: center;
     align-items: center;
     background:
     linear-gradient(to bottom, rgba(0,0,0,0.10), rgba(0,0,0,0.55)),
-    url("room.jpg") center/cover no-repeat;
+    url("DTIC3158.JPG") center/cover no-repeat;
     position: relative;
     overflow: hidden;
     opacity: 0;
@@ -312,12 +505,39 @@ html, body {
     transform: scale(1);
 }
 
-.hero h1 {
-    background: rgba(10,10,10,0.55);
-    color: #ffffff;
-    border: 1px solid rgba(255,255,255,0.08);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 25px rgba(0,255,200,0.10);
+.hero-text{
+
+    position:absolute;
+
+    left:60px;
+    bottom:70px;
+
+    z-index:5;
+}
+
+.hero-text span{
+
+    display:block;
+
+    color:rgba(255,255,255,0.55);
+
+    letter-spacing:6px;
+
+    font-size:.85rem;
+
+    margin-bottom:10px;
+}
+
+.hero-text h1{
+
+    font-size:4.5rem;
+
+    line-height:1;
+
+    color:white;
+
+    text-shadow:
+    0 0 25px rgba(0,255,200,.15);
 }
 
 /* VIEWER (show 1 card only) */
@@ -522,6 +742,7 @@ html, body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    overflow:hidden;
 }
 
 .footer-left h3{
@@ -676,27 +897,125 @@ html, body {
         text-align: center;
     }
 
+    .hero-text{
+
+        left:25px;
+        bottom:40px;
+    }
+
+    .hero-text span{
+
+        font-size:.7rem;
+
+        letter-spacing:4px;
+    }
+
+    .hero-text h1{
+
+        font-size:2.3rem;
+    }
+
 }
 
-/* ===== LANDSCAPE MOBILE (หน้าขวาง) ===== */
-/* แก้ปัญหาเวลาคนดูมือถือแนวนอนแล้วรูปมันล้นจอ */
-@media (max-height: 500px) and (orientation: landscape) {
-    .hero {
-        height: 120vh; /* เพิ่มความสูงให้ scroll ได้ */
+/* ===== MOBILE LANDSCAPE FIX ===== */
+@media screen and (orientation: landscape) and (max-height: 500px){
+
+    .hero{
+        height: 100svh;
+
+        background:
+        linear-gradient(to bottom,
+        rgba(0,0,0,0.10),
+        rgba(0,0,0,0.55)),
+        url("DTIC3158.JPG") center center /  no-repeat;
+
+        background-color: #000;
     }
-    .card {
-        flex-direction: row; /* เปลี่ยนเป็นแนวนอน */
-        max-width: 600px;
-        text-align: left;
+
+    .hero-text{
+        left: 25px;
+        bottom: 25px;
+    }
+
+    .hero-text h1{
+        font-size: 2rem;
+    }
+
+    .viewer{
+        padding: 30px 12px 60px;
+    }
+
+    .card{
+
+        width: 95%;
+        max-width: 420px;
+
+        flex-direction: column;
+
+        padding: 18px;
+
+        gap: 10px;
+    }
+
+    .profile{
+
+        width: 170px;
+        height: 210px;
+
+        max-width: 100%;
+    }
+
+    .pagination{
+
+        margin-top: 20px;
+        margin-bottom: 30px;
+
+        gap: 6px;
+    }
+
+    .page-numbers button,
+    .arrow{
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 12px;
+    }
+
+    .footer{
+
+        padding: 20px 12px;
+    }
+
+    .footer-container{
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
         align-items: center;
+
+        gap: 10px;
     }
-    .profile {
-        width: 150px;
-        height: 180px;
+
+    .footer-left h3{
+        font-size: 20px;
     }
-    .viewer {
-        padding: 40px 10px;
+
+    .footer-left p{
+        font-size: 12px;
+        letter-spacing: 3px;
     }
+
+    .footer-center a{
+        font-size: 12px;
+        margin: 0 6px;
+    }
+
+    .footer-right{
+        font-size: 11px;
+    }
+
 }
 
 /* ===== MOBILE ===== */

@@ -8,6 +8,25 @@
 </head>
 <body>
 
+<!-- INTRO SCREEN -->
+<div class="intro" id="intro">
+
+    <div class="intro-content">
+
+        <img src="logo.png" class="intro-logo">
+
+        <h1>GIFTED COMPUTER</h1>
+
+        <p>GENERATION 9</p>
+
+        <div class="intro-bar">
+            <div class="intro-bar-fill"></div>
+        </div>
+
+    </div>
+
+</div>
+
 <div class="bg-orb one"></div>
 <div class="bg-orb two"></div>
 <div class="bg-orb three"></div>
@@ -23,7 +42,12 @@
 </div>
 
 <section class="hero">
-    <h1>Gifted Com Gen9</h1>
+
+    <div class="hero-text">
+        <span>GIFTED COMPUTER</span>
+        <h1>GENERATION 9</h1>
+    </div>
+
 </section>
 
 <!-- VIEWER -->
@@ -535,6 +559,28 @@ logoBtn.addEventListener("click", () => {
 logoOverlay.addEventListener("click", () => {
 
     logoOverlay.classList.remove("active");
+
+});
+
+/* =========================
+   INTRO SCREEN
+========================= */
+
+const intro = document.getElementById("intro");
+
+window.addEventListener("load", () => {
+
+    // ล็อก scroll ชั่วคราว
+    document.body.style.overflow = "hidden";
+
+    setTimeout(() => {
+
+        intro.classList.add("hide");
+
+        // เปิด scroll กลับ
+        document.body.style.overflow = "auto";
+
+    }, 3200);
 
 });
 
