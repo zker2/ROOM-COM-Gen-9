@@ -852,10 +852,27 @@ body::before{
 /* ===== MOBILE (480px ลงมา) ===== */
 @media (max-width: 480px) {
 
+.logo{
+
+        left:12px;
+        top:14px;
+
+        transform:none;
+    }
+
+.logo img{
+
+        width:34px;
+        height:34px;
+
+        border-radius:10px;
+    }
+
 /* NAVBAR */
 .navbar {
     flex-wrap: wrap;
     gap: 10px;
+    padding-left:60px;
 }
 
 .navbar a {
