@@ -544,6 +544,8 @@ html, body {
 .viewer {
 
     width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
 
     background:
     radial-gradient(circle at top, rgba(0,255,200,0.05), transparent 70%);
@@ -742,7 +744,14 @@ html, body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    overflow:hidden;
+}
+
+img,
+.card,
+.hero,
+.viewer,
+.footer{
+    max-width:100%;
 }
 
 .footer-left h3{
@@ -1230,4 +1239,15 @@ html, body {
         width: 28px;
         height: 28px;
     }
+}
+
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
+}
+
+body{
+    position:relative;
+    overflow-x:hidden !important;
 }
